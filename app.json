@@ -1,0 +1,22 @@
+{
+  "id": "3f1b8fbb-8293-42c7-9fc2-16525d20d13b",
+  "name": "MasterKontoplan",
+  "publisher": "NetCompany",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 50000,
+    "to": 50099
+  }
+}
