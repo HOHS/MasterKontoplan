@@ -3,11 +3,6 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="MasterKontoplan">
     <body>
       <group id="body">
-        <trans-unit id="Table 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Master General Ledger Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2215698036 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -49,7 +44,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg</note>
         </trans-unit>
         <trans-unit id="Page 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Master General Ledger Setup</source>
+          <source>test</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Property Caption</note>
         </trans-unit>
@@ -68,10 +63,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control SubscibeEditable - Property caption</note>
         </trans-unit>
+        <trans-unit id="Table 3346508628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Company - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3346508628 - Field 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Company Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Company - Field Master GL Company Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1752667687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Subscriber - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1752667687 - Field 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Company Name</source>

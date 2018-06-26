@@ -1,5 +1,6 @@
 table 50011 "Master GL Company"
 {
+    Caption = 'test';
     DataPerCompany = false;
     LookupPageId = "Master GL Companies";
     DrillDownPageId = "Master GL Companies";

@@ -1,4 +1,4 @@
-pageextension 50010 "Master Data Setup" extends 118
+pageextension 50010 "Master Data Setup" extends "General Ledger Setup"
 {
    actions
     {
