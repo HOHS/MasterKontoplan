@@ -12,8 +12,8 @@ page 50010 "Master General Ledger Setup"
             {
                 field("Subscriber/Publisher"; "Subscriber/Publisher")
                 {
-                    caption = 'Abonnent/Udgiver';
-                    optionCaption = '  ,Abonnent,Udgiver';
+                    caption = 'Subscriber/Publisher';
+                    optionCaption = '  ,Subscriber,Publisher';
 
                     trigger OnValidate()
                     begin
@@ -22,7 +22,7 @@ page 50010 "Master General Ledger Setup"
                 }
                 field(SubscibeEditable;"Subscribes to General Ledger")
                 {
-                    caption = 'Abonnerer på Kontoplan fra';
+                    caption = 'Subscribes to General Ledger from';
                     Editable = SubscribeEditable;
                 }
                 

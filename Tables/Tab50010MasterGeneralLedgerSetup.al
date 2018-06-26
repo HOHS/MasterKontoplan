@@ -6,19 +6,19 @@ table 50010 "Master General Ledger Setup"
     {
         field(1;"Primary Key"; Code[10])
         {
-            Caption = 'Primærnøgle';
+            Caption = 'Primary Key';
             DataClassification = CustomerContent;
         }
         field(10;"Subscriber/Publisher";Option)
         {
-            Caption = 'Abonnent/Udgiver';
-            OptionCaption = ' ,Abonnent,Udgiver';
+            Caption = 'Subscriber/Publisher';
+            OptionCaption = ' ,Subscriber,Publisher';
             OptionMembers = ,Subscriber,Publisher;
             DataClassification = CustomerContent;
         }
         field(11; "Subscribes to General Ledger"; Text[30])
         {
-            Caption = 'Abonnerer på Kontoplan fra';
+            Caption = 'Subscribes to General Ledger from';
             TableRelation = "Master GL Company"."Master GL Company Name";
             DataClassification = CustomerContent;
  
