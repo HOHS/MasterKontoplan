@@ -148,8 +148,7 @@ codeunit 50010 "Master General Ledger Mgt."
 [EventSubscriber(ObjectType::Table, Database::"G/L Account", 'OnAfterInsertEvent', '', true, true)]
 local procedure UpdateAccountOnAfterInsert(var Rec: Record "G/L Account"; RunTrigger: Boolean)
 var
-    ErrorMsg: TextConst  ENU = 'You can only change account in a master company.', 
-                         DAN = 'Du kan kun oprette konti i Masterregnskaber.';
+    ErrorMsg: Label 'You can only change account in a master company.', comment = '', Maxlength = 999, locked = true;
 begin
     if not RunTrigger then
         exit;
@@ -162,8 +161,7 @@ end;
 [EventSubscriber(ObjectType::Table, Database::"G/L Account", 'OnAfterModifyEvent', '', true, true)]
 local procedure UpdateAccountOnAfterModify(var Rec: Record "G/L Account"; var xRec: Record "G/L Account"; RunTrigger: Boolean)
 var 
-    ErrorMsg: TextConst ENU = 'You can only change account in a master company.',
-                        DAN = 'Du kan kun ændre konti i Masterregnskaber.';
+    ErrorMsg: Label 'You can only change account in a master company.', comment = '', Maxlength = 999, locked = true;
 begin
     if not RunTrigger then
         exit;
@@ -176,8 +174,7 @@ end;
 [EventSubscriber(ObjectType::Table, Database::"G/L Account", 'OnAfterRenameEvent', '', true, true)]
 local procedure MessageIfEditModeDisabledOnAfterRename(var Rec: Record "G/L Account"; var xRec: Record "G/L Account"; RunTrigger: Boolean)
 var
-    ErrorMsg: TextConst ENU = 'You cannot rename an account',
-                        DAN = 'Du kan ikke omdøbe konti';
+    ErrorMsg: Label 'You cannot rename an account', comment = '', Maxlength = 999, locked = true;
 begin
     if not RunTrigger then
         exit;
@@ -188,8 +185,7 @@ end;
 [EventSubscriber(ObjectType::Table, Database::"G/L Account", 'OnAfterDeleteEvent', '', true, true)]
 local procedure MessageIfEditModeDisabledOnAfterDelete(var Rec: Record "G/L Account"; RunTrigger: Boolean)
 var
-    ErrorMsg: TextConst ENU = 'You cannot delete an account',
-                        DAN = 'Du kan ikke slette konti';
+    ErrorMsg: Label 'You cannot delete an account', comment = '', Maxlength = 999, locked = true;
 begin
     If not RunTrigger then
         exit;
@@ -200,8 +196,7 @@ end;
 [EventSubscriber(ObjectType::Table, Database::Dimension, 'OnAfterInsertEvent', '', true, true)]
 local procedure UpdateDimensionsOnAfterInsert(var Rec: Record Dimension; RunTrigger: Boolean)
 var
-    ErrorMsg: TextConst ENU = 'You can only add dimensions in a master company.',
-                        DAN = 'Du kan kun tilføje dimensioner i masterregnskaber.';
+    ErrorMsg: Label 'You can only add dimensions in a master company.', comment = '', Maxlength = 999, locked = true;
 begin
     if not RunTrigger then
         exit;
@@ -214,8 +209,7 @@ end;
 [EventSubscriber(ObjectType::Table, Database::"Default Dimension", 'OnAfterInsertEvent', '', true, true)]
 local procedure UpdateDefaultDimensionsOnAfterInsert(var Rec: Record "Default Dimension"; RunTrigger: Boolean)
 var 
-    ErrorMsg: TextConst ENU = 'You can only add default dimensions in a master company.',
-                        DAN = 'Du kan kun tilføje standarddimensioner i Masterregnskaber.';
+    ErrorMsg: Label 'You can only add default dimensions in a master company.', comment = '', Maxlength = 999, locked = true;
 begin
     If not RunTrigger then
         exit;
@@ -228,8 +222,7 @@ end;
 [EventSubscriber(ObjectType::Table, Database::"Default Dimension", 'OnAfterDeleteEvent', '', true, true)]
 local procedure UpdateMasterWithDefaultDimensionOnAfterDelete(var Rec: Record "Default Dimension"; RunTrigger :Boolean)
 var
-    ErrorMsg: TextConst ENU = 'You can only delete default dimensions in a master company.',
-                        DAN = 'Du kan kun slette standarddimensioner i Masterregnskaber.';
+    ErrorMsg: Label 'You can only delete default dimensions in a master company.', comment = '', Maxlength = 999, locked = true;
 begin
     if not RunTrigger then
         exit;

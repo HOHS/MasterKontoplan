@@ -58,6 +58,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Subscriber - Field Subscriber Company Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 2597895614 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change account in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateAccountOnAfterInsert - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 889272039 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change account in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateAccountOnAfterModify - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1610089194 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure MessageIfEditModeDisabledOnAfterRename - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 126619761 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure MessageIfEditModeDisabledOnAfterDelete - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 4141216188 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only add dimensions in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateDimensionsOnAfterInsert - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 2299642277 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only add default dimensions in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateDefaultDimensionsOnAfterInsert - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 954635228 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only delete default dimensions in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateMasterWithDefaultDimensionOnAfterDelete - NamedType ErrorMsg</note>
+        </trans-unit>
         <trans-unit id="Page 3955222186 - Control 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Company Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
