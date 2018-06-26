@@ -24,10 +24,8 @@ table 50010 "Master General Ledger Setup"
  
             trigger OnValidate()
             var
-                ErrorMsg:TextConst  ENU = 'Publishers cannot subscribe to a general ledger.', 
-                                    DAN = 'Udgivere kan ikke abonnere på en kontoplan';
-                ErrorMsg2:TextConst ENU = 'You cannot cahnge the General Ledger a company subscribes to', 
-                                    DAN = 'Du kan ikke ændre kontoplanen som et regnskab abonnerer på';    
+                ErrorMsg:  Label 'Publishers cannot subscribe to a general ledger.', comment = '', Maxlength = 999, locked = true;
+                ErrorMsg2: Label 'You cannot cahnge the General Ledger a company subscribes to', comment = '', Maxlength = 999, locked = true;
                 MasterGeneralLedgerMgt:Codeunit 50010;
             begin
                 if (("Subscribes to General Ledger" <> '') AND ("Subscriber/Publisher" <> "Subscriber/Publisher"::Subscriber)) then
@@ -55,8 +53,7 @@ table 50010 "Master General Ledger Setup"
     
     trigger OnModify()
     var 
-        ErrorMsg: TextConst ENU ='This company subscribes to a master GL - you cannot change it to not subscribe', 
-                            DAN = 'Dette regnskab abonnerer på en masterkontoplan - du kan ikke ændre det til ikke at abonnere';
+        ErrorMsg: Label'This company subscribes to a master GL - you cannot change it to not subscribe', comment = '', Maxlength = 999, locked = true;
         MasterGeneralLedgerMgt:Codeunit 50010;
     begin
         if (xRec."Subscriber/Publisher" = "Subscriber/Publisher"::Subscriber) then
