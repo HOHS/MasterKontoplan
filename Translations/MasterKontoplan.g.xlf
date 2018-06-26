@@ -4,22 +4,22 @@
     <body>
       <group id="body">
         <trans-unit id="Table 2215698036 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Primærnøgle</source>
+          <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Primary Key - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2215698036 - Field 1362654181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Abonnent/Udgiver</source>
+          <source>Subscriber/Publisher</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Subscriber/Publisher - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2215698036 - Field 1362654181 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Abonnent,Udgiver</source>
+          <source> ,Subscriber,Publisher</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Subscriber/Publisher - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 2215698036 - Field 2936729197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Abonnerer på Kontoplan fra</source>
+          <source>Subscribes to General Ledger from</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Property Caption</note>
         </trans-unit>
@@ -44,17 +44,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg</note>
         </trans-unit>
         <trans-unit id="Page 2215698036 - Control 1362654181 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Abonnent/Udgiver</source>
+          <source>Subscriber/Publisher</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control Subscriber/Publisher - Property caption</note>
         </trans-unit>
         <trans-unit id="Page 2215698036 - Control 1362654181 - Property 2589162015" size-unit="char" translate="yes" xml:space="preserve">
-          <source>  ,Abonnent,Udgiver</source>
+          <source>  ,Subscriber,Publisher</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control Subscriber/Publisher - Property optionCaption</note>
         </trans-unit>
         <trans-unit id="Page 2215698036 - Control 2373295856 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Abonnerer på Kontoplan fra</source>
+          <source>Subscribes to General Ledger from</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control SubscibeEditable - Property caption</note>
         </trans-unit>
