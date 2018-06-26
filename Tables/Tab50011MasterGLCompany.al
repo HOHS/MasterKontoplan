@@ -14,7 +14,6 @@ table 50011 "Master GL Company"
             TableRelation = Company.Name;
         }
     }
-    
     keys
     {
         key(PK; "Master GL Company Name")
