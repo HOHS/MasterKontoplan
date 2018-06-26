@@ -3,6 +3,11 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="MasterKontoplan">
     <body>
       <group id="body">
+        <trans-unit id="Table 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master General Ledger Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2215698036 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -42,6 +47,11 @@
           <source>This company subscribes to a master GL - you cannot change it to not subscribe</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Page 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master General Ledger Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2215698036 - Control 1362654181 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
           <source>Subscriber/Publisher</source>

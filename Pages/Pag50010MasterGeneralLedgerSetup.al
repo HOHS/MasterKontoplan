@@ -1,6 +1,7 @@
 page 50010 "Master General Ledger Setup"
 {
     PageType = Card;
+    Caption = 'Master General Ledger Setup';
     SourceTable = "Master General Ledger Setup";
     InsertAllowed = false;
     DeleteAllowed = false;
