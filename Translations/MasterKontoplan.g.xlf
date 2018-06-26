@@ -29,7 +29,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Trigger OnValidate - NamedType ErrorMsg</note>
         </trans-unit>
         <trans-unit id="Table 2215698036 - Field 2936729197 - Method 2126772001 - NamedType 1922588557" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
-          <source>You cannot cahnge the General Ledger a company subscribes to</source>
+          <source>You cannot change the General Ledger a company subscribes to</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Trigger OnValidate - NamedType ErrorMsg2</note>
         </trans-unit>

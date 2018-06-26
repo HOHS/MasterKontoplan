@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="da-DK" original="MasterKontoplan">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 2215698036 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target xml:lang="da-DK">Primærnøgle</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Field Primary Key - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Field 1362654181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscriber/Publisher</source>
+          <target xml:lang="da-DK">Abonnent/Udgiver</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Field Subscriber/Publisher - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Field 1362654181 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Subscriber,Publisher</source>
+          <target xml:lang="da-DK"> , Abonnent, Udgiver</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Field Subscriber/Publisher - Property OptionCaption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Field 2936729197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscribes to General Ledger from</source>
+          <target xml:lang="da-DK">Abonnerer på kontoplan fra</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Field 2936729197 - Method 2126772001 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>Publishers cannot subscribe to a general ledger.</source>
+          <target xml:lang="da-DK">Udgivere kan ikke abonnere på en kontoplan.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Trigger OnValidate - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Field 2936729197 - Method 2126772001 - NamedType 1922588557" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot change the General Ledger a company subscribes to</source>
+          <target xml:lang="da-DK">Du kan ikke ændre i en kontoplan et andet regnskab abonnerer på.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Trigger OnValidate - NamedType ErrorMsg2</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Field 854674193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit Mode</source>
+          <target xml:lang="da-DK">Redigeringstilstand</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Field Edit Mode - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Method 1262666395 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>This company subscribes to a master GL - you cannot change it to not subscribe</source>
+          <target xml:lang="da-DK">Dette regnskab abonnerer på en kontoplan. Du kan ikke fjerne abonneringen.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Page 2215698036 - Control 1362654181 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscriber/Publisher</source>
+          <target xml:lang="da-DK">Abonnent/Udgiver</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Page Master General Ledger Setup - Control Subscriber/Publisher - Property caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Page 2215698036 - Control 1362654181 - Property 2589162015" size-unit="char" translate="yes" xml:space="preserve">
+          <source>  ,Subscriber,Publisher</source>
+          <target xml:lang="da-DK">  , Abonnent, Udgiver</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Page Master General Ledger Setup - Control Subscriber/Publisher - Property optionCaption</note>
+          
+        </trans-unit>
+        <trans-unit id="Page 2215698036 - Control 2373295856 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscribes to General Ledger from</source>
+          <target xml:lang="da-DK">Abonnerer på kontoplan fra</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Page Master General Ledger Setup - Control SubscibeEditable - Property caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 3346508628 - Field 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master GL Company Name</source>
+          <target xml:lang="da-DK">Masterkontoplan regnskab</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master GL Company - Field Master GL Company Name - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 1752667687 - Field 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master GL Company Name</source>
+          <target xml:lang="da-DK">Masterkontoplan regnskab</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master GL Subscriber - Field Master GL Company Name - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Table 1752667687 - Field 575622686 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscriber Company Name</source>
+          <target xml:lang="da-DK">Abonnent regnskab</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master GL Subscriber - Field Subscriber Company Name - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 2597895614 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change account in a master company.</source>
+          <target xml:lang="da-DK">Du kan kun ændre i konti i masterregnskabets kontoplan.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateAccountOnAfterInsert - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 889272039 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change account in a master company.</source>
+          <target xml:lang="da-DK">Du kan kun ændre i konti i masterregnskabets kontoplan.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateAccountOnAfterModify - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1610089194 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an account</source>
+          <target xml:lang="da-DK">Du kan ikke omdøbe en konto.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Codeunit Master General Ledger Mgt. - Procedure MessageIfEditModeDisabledOnAfterRename - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 126619761 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an account</source>
+          <target xml:lang="da-DK">Du kan ikke slette en konto.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Codeunit Master General Ledger Mgt. - Procedure MessageIfEditModeDisabledOnAfterDelete - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 4141216188 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only add dimensions in a master company.</source>
+          <target xml:lang="da-DK">Du kan kun oprette dimensioner i masterregnskabets kontoplan.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateDimensionsOnAfterInsert - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 2299642277 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only add default dimensions in a master company.</source>
+          <target xml:lang="da-DK">Du kan kun oprette standarddimensioner i masterregnskabets kontoplan.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateDefaultDimensionsOnAfterInsert - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 954635228 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only delete default dimensions in a master company.</source>
+          <target xml:lang="da-DK">Du kan kun fjerne standarddimensioner i masterregnskabets kontoplan.</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateMasterWithDefaultDimensionOnAfterDelete - NamedType ErrorMsg</note>
+          
+        </trans-unit>
+        <trans-unit id="Page 3955222186 - Control 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master GL Company Name</source>
+          <target xml:lang="da-DK">Masterkontoplan regnskab</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Page Master GL Companies - Control Master GL Company Name - Property Caption</note>
+          
+        </trans-unit>
+        <trans-unit id="PageExtension 3006080309 - Action 3933039621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master Data Setup</source>
+          <target xml:lang="da-DK">Master Data Setup</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">PageExtension Master Data Setup - Action MasterDataSetup - Property Caption</note>
+          
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

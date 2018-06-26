@@ -25,7 +25,7 @@ table 50010 "Master General Ledger Setup"
             trigger OnValidate()
             var
                 ErrorMsg:  Label 'Publishers cannot subscribe to a general ledger.', comment = '', Maxlength = 999, locked = true;
-                ErrorMsg2: Label 'You cannot cahnge the General Ledger a company subscribes to', comment = '', Maxlength = 999, locked = true;
+                ErrorMsg2: Label 'You cannot change the General Ledger a company subscribes to', comment = '', Maxlength = 999, locked = true;
                 MasterGeneralLedgerMgt:Codeunit 50010;
             begin
                 if (("Subscribes to General Ledger" <> '') AND ("Subscriber/Publisher" <> "Subscriber/Publisher"::Subscriber)) then
