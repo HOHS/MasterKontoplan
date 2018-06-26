@@ -3,6 +3,11 @@
   <file datatype="xml" source-language="en-US" target-language="da-DK" original="MasterKontoplan">
     <body>
       <group id="body">
+		<trans-unit id="Table 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+			<source>Master General Ledger Setup</source>
+			<target xml:lang="da-DK">Opsætning af masterkontoplan</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Property Caption</note>
+
         <trans-unit id="Table 2215698036 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <target xml:lang="da-DK">Primærnøgle</target>
@@ -49,6 +54,13 @@
           <source>This company subscribes to a master GL - you cannot change it to not subscribe</source>
           <target xml:lang="da-DK">Dette regnskab abonnerer på en kontoplan. Du kan ikke fjerne abonneringen.</target>
 <note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg</note>
+
+        </trans-unit>
+        <trans-unit id="Page 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master General Ledger Setup</source>
+          <target xml:lang="da-DK">Opsætning af masterkontoplan</target>
+<note annotates="general" from="Developer" priority="2"></note><note annotates="general" from="Xliff Generator" priority="3">Page Master General Ledger Setup - Property Caption</note>
+
           
         </trans-unit>
         <trans-unit id="Page 2215698036 - Control 1362654181 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
