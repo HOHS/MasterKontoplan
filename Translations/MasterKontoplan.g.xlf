@@ -4,7 +4,7 @@
     <body>
       <group id="body">
         <trans-unit id="Table 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>test</source>
+          <source>Master General Ledger Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Property Caption</note>
         </trans-unit>
@@ -38,6 +38,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Trigger OnValidate - NamedType ErrorMsg2</note>
         </trans-unit>
+        <trans-unit id="Table 2215698036 - Field 2936729197 - Method 2126772001 - NamedType 2560285174" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>A subscriber must subscribe to a publisher.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Field Subscribes to General Ledger - Trigger OnValidate - NamedType ErrorMsg3</note>
+        </trans-unit>
         <trans-unit id="Table 2215698036 - Field 854674193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Edit Mode</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -48,8 +53,23 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg</note>
         </trans-unit>
+        <trans-unit id="Table 2215698036 - Method 1262666395 - NamedType 1922588557" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>Publishers cannot subscribe to a general ledger.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg2</note>
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Method 1262666395 - NamedType 2560285174" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot change the General Ledger a company subscribes to</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg3</note>
+        </trans-unit>
+        <trans-unit id="Table 2215698036 - Method 1262666395 - NamedType 2391376151" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>A subscriber must subscribe to a publisher.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Master General Ledger Setup - Trigger OnModify - NamedType ErrorMsg4</note>
+        </trans-unit>
         <trans-unit id="Page 2215698036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>test</source>
+          <source>Master General Ledger Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Property Caption</note>
         </trans-unit>
@@ -79,7 +99,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Company - Field Master GL Company Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1752667687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>test</source>
+          <source>Master GL Subscriber</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Subscriber - Property Caption</note>
         </trans-unit>

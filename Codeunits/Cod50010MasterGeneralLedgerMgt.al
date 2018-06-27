@@ -130,8 +130,13 @@ codeunit 50010 "Master General Ledger Mgt."
     var
         MasterGeneralLedgerSetup: Record "Master General Ledger Setup";
     begin
-        MasterGeneralLedgerSetup.Get();
-        exit(MasterGeneralLedgerSetup."Subscriber/Publisher" = MasterGeneralLedgerSetup."Subscriber/Publisher"::Publisher)
+        if MasterGeneralLedgerSetup.Get() then //NEWCODE
+            exit(MasterGeneralLedgerSetup."Subscriber/Publisher" IN [
+                MasterGeneralLedgerSetup."Subscriber/Publisher"::Publisher,
+                MasterGeneralLedgerSetup."Subscriber/Publisher"::" "
+            ])
+        else
+            exit(true);
     end;
     
     local procedure EditModeIsEnabled():Boolean
