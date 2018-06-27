@@ -16,6 +16,13 @@ table 50010 "Master General Ledger Setup"
             OptionCaption = ' ,Subscriber,Publisher';
             OptionMembers = " ",Subscriber,Publisher;
             DataClassification = CustomerContent;
+            trigger OnValidate()
+            var
+                MasterGeneralLedgerMgt: Codeunit "Master General Ledger Mgt.";
+            begin
+                if ((xRec."Subscriber/Publisher" = xRec."Subscriber/Publisher"::Publisher) and (rec."Subscriber/Publisher" <> rec."Subscriber/Publisher"::Publisher)) then
+                    MasterGeneralLedgerMgt.RemoveFromMasterCompanyList(CompanyName());
+            end;
         }
         field(11; "Subscribes to General Ledger"; Text[30])
         {
@@ -74,6 +81,8 @@ table 50010 "Master General Ledger Setup"
             Error(ErrorMsg4);
 
         MasterGeneralLedgerMgt.AddSubscription("Subscribes to General Ledger",CompanyName());
-        MasterGeneralLedgerMgt.DoInitialCopy("Subscribes to General Ledger",CompanyName());        
+        if Rec."Subscriber/Publisher" = Rec."Subscriber/Publisher"::Subscriber then
+            MasterGeneralLedgerMgt.DoInitialCopy("Subscribes to General Ledger",CompanyName());
+        //det er muligt at oprette en virksomhed som publisher, og derefter sætte den som subscriber på sig selv.
     end;
 }

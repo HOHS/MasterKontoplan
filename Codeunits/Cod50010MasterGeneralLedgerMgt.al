@@ -11,6 +11,21 @@ codeunit 50010 "Master General Ledger Mgt."
         MasterGLCompany.Insert(true);
     end;
 
+    procedure RemoveFromMasterCompanyList(MasterCompanyName: Text[30])
+    var
+        MasterGLCompany: Record "Master GL Company";
+        MasterGLSubscriber: Record "Master GL Subscriber";
+        ErrorMsg: Label 'You cannot change Company: %1, from publisher to subscriber because there are other companies subscribing to it.', comment = '', Maxlength = 999, locked = true;
+
+    begin
+        if MasterGLCompany.get(MasterCompanyName) then begin
+            MasterGLSubscriber.SetRange("Master GL Company Name", MasterCompanyName);
+            If MasterGLSubscriber.Count() > 0 then
+                Error(ErrorMsg, MasterCompanyName);
+            MasterGLCompany.Delete(false)
+        end;
+    end;
+
     procedure AddSubscription(MasterCompanyName: Text[30]; SubscriberCompanyName: Text[30])
     var
         MasterGLSubscriber: Record "Master GL Subscriber";
@@ -242,17 +257,17 @@ end;
 local procedure UpdateMasterGLCompanyAndMasterGLSubscriberOnAfterDelete(var Rec: Record Company; RunTrigger: Boolean)
 var 
     MasterGLCompany: Record "Master GL Company";
-    MasterGLSubsriber: Record "Master GL Subscriber";
+    MasterGLSubscriber: Record "Master GL Subscriber";
     ErrorMsg: Label 'You cannot delete Company: %1, because there are other companies subscribing to it.', comment = '', Maxlength = 999, locked = true;
 begin
     if MasterGLCompany.get(Rec.Name) then begin
-        MasterGLSubsriber.SetRange("Master GL Company Name",Rec.Name);
-        If MasterGLSubsriber.Count() > 0 then
+        MasterGLSubscriber.SetRange("Master GL Company Name",Rec.Name);
+        If MasterGLSubscriber.Count() > 0 then
             Error(ErrorMsg, Rec.Name);
         MasterGLCompany.Delete(false)
     end else begin
-        MasterGLSubsriber.SetRange("Subscriber Company Name",Rec.Name);
-        MasterGLSubsriber.DeleteAll();
+        MasterGLSubscriber.SetRange("Subscriber Company Name",Rec.Name);
+        MasterGLSubscriber.DeleteAll();
     end;
 end;
 // </events>

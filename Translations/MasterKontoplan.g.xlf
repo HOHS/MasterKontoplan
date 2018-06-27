@@ -113,6 +113,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Subscriber - Field Subscriber Company Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1968363843 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot change Company: %1, from publisher to subscriber because there are other companies subscribing to it.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure RemoveFromMasterCompanyList - NamedType ErrorMsg</note>
+        </trans-unit>
         <trans-unit id="Codeunit 275315937 - Method 2597895614 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
           <source>You can only change account in a master company.</source>
           <note from="Developer" annotates="general" priority="2"></note>
