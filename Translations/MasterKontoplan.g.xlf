@@ -148,6 +148,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateMasterWithDefaultDimensionOnAfterDelete - NamedType ErrorMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1662027365 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete Company: %1, because there are other companies subscribing to it.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateMasterGLCompanyAndMasterGLSubscriberOnAfterDelete - NamedType ErrorMsg</note>
+        </trans-unit>
         <trans-unit id="Page 3955222186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Companies</source>
           <note from="Developer" annotates="general" priority="2"></note>

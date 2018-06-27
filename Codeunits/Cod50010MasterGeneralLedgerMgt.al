@@ -225,7 +225,7 @@ begin
 end;
 
 [EventSubscriber(ObjectType::Table, Database::"Default Dimension", 'OnAfterDeleteEvent', '', true, true)]
-local procedure UpdateMasterWithDefaultDimensionOnAfterDelete(var Rec: Record "Default Dimension"; RunTrigger :Boolean)
+local procedure UpdateMasterWithDefaultDimensionOnAfterDelete(var Rec: Record "Default Dimension"; RunTrigger: Boolean)
 var
     ErrorMsg: Label 'You can only delete default dimensions in a master company.', comment = '', Maxlength = 999, locked = true;
 begin
@@ -235,6 +235,25 @@ begin
         Error(ErrorMsg)
     else
         DeleteDefaultDimension(Rec);
+end;
+
+//NEWCODE for deletion of companies
+[EventSubscriber(ObjectType::Table, Database::Company, 'OnAfterDeleteEvent', '', true, true)]
+local procedure UpdateMasterGLCompanyAndMasterGLSubscriberOnAfterDelete(var Rec: Record Company; RunTrigger: Boolean)
+var 
+    MasterGLCompany: Record "Master GL Company";
+    MasterGLSubsriber: Record "Master GL Subscriber";
+    ErrorMsg: Label 'You cannot delete Company: %1, because there are other companies subscribing to it.', comment = '', Maxlength = 999, locked = true;
+begin
+    if MasterGLCompany.get(Rec.Name) then begin
+        MasterGLSubsriber.SetRange("Master GL Company Name",Rec.Name);
+        If MasterGLSubsriber.Count() > 0 then
+            Error(ErrorMsg, Rec.Name);
+        MasterGLCompany.Delete(false)
+    end else begin
+        MasterGLSubsriber.SetRange("Subscriber Company Name",Rec.Name);
+        MasterGLSubsriber.DeleteAll();
+    end;
 end;
 // </events>
 }

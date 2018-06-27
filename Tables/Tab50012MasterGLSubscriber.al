@@ -17,7 +17,6 @@ table 50012 "Master GL Subscriber"
             DataClassification = CustomerContent;
         }
     }
-    
     keys
     {
         key(PK; "Master GL Company Name","Subscriber Company Name")
