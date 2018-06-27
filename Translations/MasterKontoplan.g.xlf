@@ -83,10 +83,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control Subscriber/Publisher - Property optionCaption</note>
         </trans-unit>
-        <trans-unit id="Page 2215698036 - Control 2373295856 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2215698036 - Control 2936729197 - Property 3830149458" size-unit="char" translate="yes" xml:space="preserve">
           <source>Subscribes to General Ledger from</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control SubscibeEditable - Property caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control Subscribes to General Ledger - Property caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2215698036 - Action 3933039621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master Data Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Action MasterDataSetup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3346508628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Company</source>

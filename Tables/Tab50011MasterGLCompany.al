@@ -11,7 +11,6 @@ table 50011 "Master GL Company"
         field(1;"Master GL Company Name"; text[30])
         {
             DataClassification = CustomerContent;
-            TableRelation = Company.Name;
         }
     }
     keys

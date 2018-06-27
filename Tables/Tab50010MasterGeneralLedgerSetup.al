@@ -16,7 +16,7 @@ table 50010 "Master General Ledger Setup"
             OptionCaption = ' ,Subscriber,Publisher';
             OptionMembers = " ",Subscriber,Publisher;
             DataClassification = CustomerContent;
-            trigger OnValidate()
+            trigger OnValidate() //NEWCODE
             var
                 MasterGeneralLedgerMgt: Codeunit "Master General Ledger Mgt.";
             begin
@@ -80,9 +80,10 @@ table 50010 "Master General Ledger Setup"
         if (("Subscriber/Publisher" = "Subscriber/Publisher"::Subscriber) and ("Subscribes to General Ledger" = '')) then
             Error(ErrorMsg4);
 
-        MasterGeneralLedgerMgt.AddSubscription("Subscribes to General Ledger",CompanyName());
-        if Rec."Subscriber/Publisher" = Rec."Subscriber/Publisher"::Subscriber then
+        
+        if Rec."Subscriber/Publisher" = Rec."Subscriber/Publisher"::Subscriber then begin
+            MasterGeneralLedgerMgt.AddSubscription("Subscribes to General Ledger",CompanyName());
             MasterGeneralLedgerMgt.DoInitialCopy("Subscribes to General Ledger",CompanyName());
-        //det er muligt at oprette en virksomhed som publisher, og derefter sætte den som subscriber på sig selv.
+        end;
     end;
 }

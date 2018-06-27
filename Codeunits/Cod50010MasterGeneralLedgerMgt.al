@@ -11,7 +11,7 @@ codeunit 50010 "Master General Ledger Mgt."
         MasterGLCompany.Insert(true);
     end;
 
-    procedure RemoveFromMasterCompanyList(MasterCompanyName: Text[30])
+    procedure RemoveFromMasterCompanyList(MasterCompanyName: Text[30]) //NEWCODE
     var
         MasterGLCompany: Record "Master GL Company";
         MasterGLSubscriber: Record "Master GL Subscriber";

@@ -21,7 +21,7 @@ page 50010 "Master General Ledger Setup"
                     SubscribeEditable := "Subscriber/Publisher" = "Subscriber/Publisher"::Subscriber;    
                     end;
                 }
-                field(SubscibeEditable;"Subscribes to General Ledger")
+                field("Subscribes to General Ledger";"Subscribes to General Ledger")
                 {
                     caption = 'Subscribes to General Ledger from';
                     Editable = SubscribeEditable;
@@ -30,6 +30,22 @@ page 50010 "Master General Ledger Setup"
             }
         }
     }
+    actions
+    {
+        area(Navigation)
+        {
+            action(MasterDataSetup)
+            {
+                image = MapAccounts;
+                Caption = 'Master Data Setup';
+                trigger OnAction()
+                begin
+                    page.run(50011)
+                end;
+            }
+        }
+    }
+    
     trigger OnOpenPage()
     begin
         Reset();
