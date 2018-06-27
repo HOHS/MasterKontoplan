@@ -1,6 +1,6 @@
 table 50010 "Master General Ledger Setup"
 {
-    Caption = 'test';
+    Caption = 'Master General Ledger Setup';
     DataClassification = CustomerContent;
     
     fields

@@ -1,6 +1,6 @@
 page 50011 "Master GL Companies"
 {
-    Caption = 'Master GL Companies'
+    Caption = 'Master GL Companies';
     Editable = false;
     PageType = List;
     SourceTable = "Master GL Company";

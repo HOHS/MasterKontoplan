@@ -69,7 +69,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Master General Ledger Setup - Control SubscibeEditable - Property caption</note>
         </trans-unit>
         <trans-unit id="Table 3346508628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>test</source>
+          <source>Master GL Company</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Master GL Company - Property Caption</note>
         </trans-unit>
@@ -127,6 +127,11 @@
           <source>You can only delete default dimensions in a master company.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateMasterWithDefaultDimensionOnAfterDelete - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Page 3955222186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Master GL Companies</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Master GL Companies - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3955222186 - Control 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Company Name</source>
