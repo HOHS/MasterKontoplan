@@ -2,8 +2,8 @@ table 50012 "Master GL Subscriber"
 {
     Caption = 'Master GL Subscriber';
     DataPerCompany = false;
-    LookupPageId = "Master GL Companies";
-    DrillDownPageId = "Master GL Companies";
+    LookupPageId = NewMasterGLCompanies;
+    DrillDownPageId = NewMasterGLCompanies;
     DataClassification = CustomerContent;
     fields
     {

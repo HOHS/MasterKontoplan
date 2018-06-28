@@ -40,7 +40,7 @@ page 50010 "Master General Ledger Setup"
                 Caption = 'Master Data Setup';
                 trigger OnAction()
                 begin
-                    page.run(50011)
+                    page.run(50012)
                 end;
             }
         }

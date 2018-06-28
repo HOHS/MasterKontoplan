@@ -163,15 +163,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateMasterGLCompanyAndMasterGLSubscriberOnAfterDelete - NamedType ErrorMsg</note>
         </trans-unit>
-        <trans-unit id="Page 3955222186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 287311118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Companies</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Master GL Companies - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page NewMasterGLCompanies - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3955222186 - Control 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 287311118 - Control 972905145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Company Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Master GL Companies - Control Master GL Company Name - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page NewMasterGLCompanies - Control Master GL Company Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3006080309 - Action 3933039621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master Data Setup</source>
