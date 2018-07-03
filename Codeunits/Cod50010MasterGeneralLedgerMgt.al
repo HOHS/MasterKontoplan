@@ -36,37 +36,139 @@ codeunit 50010 "Master General Ledger Mgt."
     end;
 
     procedure DoInitialCopy(MasterCompanyName: text[30];SubscriberCompanyName: text[30])
-    var
-        MasterGL: Record "G/L Account";
-        SubscriberGL: Record "G/L Account";
-        MasterDimension: Record Dimension;
-        SubscriberDimension: Record Dimension;
-        MasterDefaultDimension: Record "Default Dimension";
-        SubscriberDefaultDimension: Record "Default Dimension";
     begin
-        //This should ONLY ever be triggered from a subscriber company!
-        MasterGL.ChangeCompany(MasterCompanyName);
-        If MasterGL.FindSet() then repeat
-            SubscriberGL.Init();
-            SubscriberGL.TransferFields(MasterGL, true);
-            SubscriberGL.insert(false);
-        until MasterGL.Next() = 0;
-
-        MasterDimension.ChangeCompany(MasterCompanyName);
-        if MasterDimension.FindSet() then repeat
-            SubscriberDimension.Init();
-            SubscriberDimension.TransferFields(MasterDimension, true);
-            SubscriberDimension.Insert(false);
-        until MasterDimension.Next() = 0;
-
-        MasterDefaultDimension.ChangeCompany(MasterCompanyName);
-        MasterDefaultDimension.SetRange("Table ID", 15);
-        IF MasterDefaultDimension.FindSet() then repeat
-            SubscriberDefaultDimension.Init();
-            SubscriberDefaultDimension.TransferFields(MasterDefaultDimension, true);
-            SubscriberDefaultDimension.Insert(false);
-        until MasterDefaultDimension.Next() = 0;
+        //should be triggered when a new company starts to subscribe to a master - note that it is expected that the copied tables are EMPTY in the subscriber company
+        CopyGLAccounts(MasterCompanyName,SubscriberCompanyName);
+        CopyDimensions(MasterCompanyName,SubscriberCompanyName);
+        CopyDefaultDimensions(MasterCompanyName,SubscriberCompanyName,DATABASE::"G/L Account"); 
+        CopyBusinessPostingGroups(MasterCompanyName,SubscriberCompanyName);
+        CopyProductPostingGroups(MasterCompanyName,SubscriberCompanyName);
+        CopyVATBusinessPostingGroups(MasterCompanyName,SubscriberCompanyName);
+        CopyVATProductPostingGroups(MasterCompanyName,SubscriberCompanyName);
+        CopyCustomerPostingGroups(MasterCompanyName,SubscriberCompanyName);
+        CopyVendorPostingGroups(MasterCompanyName,SubscriberCompanyName);
     end;
+
+    local procedure CopyGLAccounts(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromGLAccount: Record "G/L Account";
+        ToGLAccount: Record "G/L Account";
+    begin
+        FromGLAccount.ChangeCompany(FromCompanyName);
+        ToGLAccount.CHANGECOMPANY(ToCompanyName);
+        IF FromGLAccount.FINDSET THEN REPEAT
+            ToGLAccount.INIT;
+            ToGLAccount.TRANSFERFIELDS(FromGLAccount,TRUE);
+            ToGLAccount.INSERT(FALSE);
+        UNTIL FromGLAccount.NEXT = 0;
+    end;
+
+    local procedure CopyDimensions(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromDimension: Record Dimension;
+        ToDimension: Record Dimension;
+    begin
+        FromDimension.ChangeCompany(FromCompanyName);
+        ToDimension.CHANGECOMPANY(ToCompanyName);
+        IF FromDimension.FINDSET THEN REPEAT
+            ToDimension.INIT;
+            ToDimension.TRANSFERFIELDS(FromDimension,TRUE);
+            ToDimension.INSERT(FALSE);
+        UNTIL FromDimension.NEXT = 0;
+    end;
+
+    local procedure CopyDefaultDimensions(FromCompanyName : Text[30];ToCompanyName : Text[30];ForTableID : Integer)
+    var
+        FromDefaultDimension: Record "Default Dimension";
+        ToDefaultDimension: Record "Default Dimension";
+    begin
+        FromDefaultDimension.ChangeCompany(FromCompanyName);
+        ToDefaultDimension.CHANGECOMPANY(ToCompanyName);
+        IF FromDefaultDimension.FINDSET THEN REPEAT
+            ToDefaultDimension.INIT;
+            ToDefaultDimension.TRANSFERFIELDS(FromDefaultDimension,TRUE);
+            ToDefaultDimension.INSERT(FALSE);
+        UNTIL FromDefaultDimension.NEXT = 0;
+    end;
+
+    local procedure CopyBusinessPostingGroups(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromBPG: Record "Gen. Business Posting Group";
+        ToBPG: Record "Gen. Business Posting Group";
+    begin
+        FromBPG.ChangeCompany(FromCompanyName);
+        ToBPG.CHANGECOMPANY(ToCompanyName);
+        IF FromBPG.FINDSET THEN REPEAT
+            ToBPG.INIT;
+            ToBPG.TRANSFERFIELDS(FromBPG,TRUE);
+            ToBPG.INSERT(FALSE);
+        UNTIL FromBPG.NEXT = 0;
+    end;
+    local procedure CopyProductPostingGroups(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromPPG: Record "Gen. Product Posting Group";
+        ToPPG: Record "Gen. Product Posting Group";
+    begin
+        FromPPG.ChangeCompany(FromCompanyName);
+        ToPPG.CHANGECOMPANY(ToCompanyName);
+        IF FromPPG.FINDSET THEN REPEAT
+            ToPPG.INIT;
+            ToPPG.TRANSFERFIELDS(FromPPG,TRUE);
+            ToPPG.INSERT(FALSE);
+        UNTIL FromPPG.NEXT = 0;
+    end;
+    local procedure CopyVATBusinessPostingGroups(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromVBPG: Record "VAT Business Posting Group";
+        ToVBPG: Record "VAT Business Posting Group";
+    begin
+        FromVBPG.ChangeCompany(FromCompanyName);
+        ToVBPG.CHANGECOMPANY(ToCompanyName);
+        IF FromVBPG.FINDSET THEN REPEAT
+            ToVBPG.INIT;
+            ToVBPG.TRANSFERFIELDS(FromVBPG,TRUE);
+            ToVBPG.INSERT(FALSE);
+        UNTIL FromVBPG.NEXT = 0;
+    end;
+    local procedure CopyVATProductPostingGroups(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromVPPG: Record "VAT Product Posting Group";
+        ToVPPG: Record "VAT Product Posting Group";
+    begin
+        FromVPPG.ChangeCompany(FromCompanyName);
+        ToVPPG.CHANGECOMPANY(ToCompanyName);
+        IF FromVPPG.FINDSET THEN REPEAT
+            ToVPPG.INIT;
+            ToVPPG.TRANSFERFIELDS(FromVPPG,TRUE);
+            ToVPPG.INSERT(FALSE);
+        UNTIL FromVPPG.NEXT = 0;
+    end;
+    local procedure CopyCustomerPostingGroups(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromCustomerPostingGroup: Record "Customer Posting Group";
+        ToCustomerPostingGroup: Record "Customer Posting Group";
+    begin
+        FromCustomerPostingGroup.ChangeCompany(FromCompanyName);
+        ToCustomerPostingGroup.CHANGECOMPANY(ToCompanyName);
+        IF FromCustomerPostingGroup.FINDSET THEN REPEAT
+            ToCustomerPostingGroup.INIT;
+            ToCustomerPostingGroup.TRANSFERFIELDS(FromCustomerPostingGroup,TRUE);
+            ToCustomerPostingGroup.INSERT(FALSE);
+        UNTIL FromCustomerPostingGroup.NEXT = 0;
+    end;
+    local procedure CopyVendorPostingGroups(FromCompanyName : Text[30];ToCompanyName : Text[30])
+    var
+        FromVendorPostingGroup: Record "Vendor Posting Group";
+        ToVendorPostingGroup: Record "Vendor Posting Group";
+    begin
+        FromVendorPostingGroup.ChangeCompany(FromCompanyName);
+        ToVendorPostingGroup.CHANGECOMPANY(ToCompanyName);
+        IF FromVendorPostingGroup.FINDSET THEN REPEAT
+            ToVendorPostingGroup.INIT;
+            ToVendorPostingGroup.TRANSFERFIELDS(FromVendorPostingGroup,TRUE);
+            ToVendorPostingGroup.INSERT(FALSE);
+        UNTIL FromVendorPostingGroup.NEXT = 0;
+    end;    
 
     local procedure UpdateAccount(var GLAccountToUpdate: Record "G/L Account")
     var
@@ -128,7 +230,92 @@ codeunit 50010 "Master General Ledger Mgt."
                 SubscriberDefaultDimension.Delete(false);
         until CompanyTemp.Next() = 0 ;
     end;    
-    
+
+
+    local procedure UpdateBusinessPostingGroup(VAR GenBusPosGrpToUpdate : Record "Gen. Business Posting Group")
+    var
+        CompanyTemp: Record Company temporary;
+        SubscriberGenBusPosGrp: Record "Gen. Business Posting Group";
+    begin
+        CreateSubscriberList(CompanyTemp,COMPANYNAME);
+        IF CompanyTemp.FINDSET THEN REPEAT
+            SubscriberGenBusPosGrp.CHANGECOMPANY(CompanyTemp.Name);
+            SubscriberGenBusPosGrp.TRANSFERFIELDS(GenBusPosGrpToUpdate,TRUE);
+        IF NOT SubscriberGenBusPosGrp.INSERT(FALSE) THEN
+            SubscriberGenBusPosGrp.MODIFY(FALSE);
+        UNTIL CompanyTemp.NEXT = 0;
+    end;
+        
+
+    local procedure UpdateProductPostingGroup(VAR GenProdPosGrpToUpdate : Record "Gen. Product Posting Group")
+    var 
+        CompanyTemp: Record Company temporary;
+        SubscriberGenProdPosGrp: Record "Gen. Product Posting Group";
+    begin
+        CreateSubscriberList(CompanyTemp,COMPANYNAME);
+        IF CompanyTemp.FINDSET THEN REPEAT
+            SubscriberGenProdPosGrp.CHANGECOMPANY(CompanyTemp.Name);
+            SubscriberGenProdPosGrp.TRANSFERFIELDS(GenProdPosGrpToUpdate,TRUE);
+        IF NOT SubscriberGenProdPosGrp.INSERT(FALSE) THEN
+            SubscriberGenProdPosGrp.MODIFY(FALSE);
+        UNTIL CompanyTemp.NEXT = 0;
+    end;
+
+    local procedure UpdateVATBusinessPostingGroup(VAR VATBusPosGrpToUpdate : Record "VAT Business Posting Group")
+    var
+        CompanyTemp: Record Company temporary;
+        SubscriberVATBusPosGrp: Record "VAT Business Posting Group";
+    begin
+        CreateSubscriberList(CompanyTemp,COMPANYNAME);
+        IF CompanyTemp.FINDSET THEN REPEAT
+            SubscriberVATBusPosGrp.CHANGECOMPANY(CompanyTemp.Name);
+            SubscriberVATBusPosGrp.TRANSFERFIELDS(VATBusPosGrpToUpdate,TRUE);
+        IF NOT SubscriberVATBusPosGrp.INSERT(FALSE) THEN
+            SubscriberVATBusPosGrp.MODIFY(FALSE);
+        UNTIL CompanyTemp.NEXT = 0;
+    end;
+
+    local procedure UpdateVATProductPostingGroup(VAR VATProdPosGrpToUpdate : Record "VAT Product Posting Group")
+    var
+        CompanyTemp: Record Company temporary;
+        SubscriberVATProdPosGrp: Record "VAT Product Posting Group";
+    begin
+        CreateSubscriberList(CompanyTemp,COMPANYNAME);
+        IF CompanyTemp.FINDSET THEN REPEAT
+            SubscriberVATProdPosGrp.CHANGECOMPANY(CompanyTemp.Name);
+            SubscriberVATProdPosGrp.TRANSFERFIELDS(VATProdPosGrpToUpdate,TRUE);
+        IF NOT SubscriberVATProdPosGrp.INSERT(FALSE) THEN
+            SubscriberVATProdPosGrp.MODIFY(FALSE);
+        UNTIL CompanyTemp.NEXT = 0;
+    end;
+
+    local procedure UpdateCustomerPostingGroup(VAR CustPostGroupToUpdate : Record "Customer Posting Group")
+    var
+        CompanyTemp: Record Company temporary;
+        SubscriberCustPostGroup: Record "Customer Posting Group";
+    begin
+        CreateSubscriberList(CompanyTemp,COMPANYNAME);
+        IF CompanyTemp.FINDSET THEN REPEAT
+            SubscriberCustPostGroup.CHANGECOMPANY(CompanyTemp.Name);
+            SubscriberCustPostGroup.TRANSFERFIELDS(CustPostGroupToUpdate,TRUE);
+        IF NOT SubscriberCustPostGroup.INSERT(FALSE) THEN
+            SubscriberCustPostGroup.MODIFY(FALSE);
+        UNTIL CompanyTemp.NEXT = 0;
+    end;
+
+    local procedure UpdateVendorPostingGroup(VAR VendPostGroupToUpdate : Record "Vendor Posting Group")
+    var
+        CompanyTemp: Record Company temporary;
+        SubscribervendPostGroup: Record "Vendor Posting Group";
+    begin
+        CreateSubscriberList(CompanyTemp,COMPANYNAME);
+        IF CompanyTemp.FINDSET THEN REPEAT
+            SubscribervendPostGroup.CHANGECOMPANY(CompanyTemp.Name);
+            SubscribervendPostGroup.TRANSFERFIELDS(VendPostGroupToUpdate,TRUE);
+        IF NOT SubscribervendPostGroup.INSERT(FALSE) THEN
+            SubscribervendPostGroup.MODIFY(FALSE);
+        UNTIL CompanyTemp.NEXT = 0;
+    end;    
     local procedure CreateSubscriberList(var CompanyTemp: Record Company temporary; MasterCompanyName: text[30])
     var
         MasterGLSubscriber: Record "Master GL Subscriber";
@@ -252,7 +439,6 @@ begin
         DeleteDefaultDimension(Rec);
 end;
 
-//NEWCODE for deletion of companies
 [EventSubscriber(ObjectType::Table, Database::Company, 'OnAfterDeleteEvent', '', true, true)]
 local procedure UpdateMasterGLCompanyAndMasterGLSubscriberOnAfterDelete(var Rec: Record Company; RunTrigger: Boolean)
 var 
@@ -270,5 +456,293 @@ begin
         MasterGLSubscriber.DeleteAll();
     end;
 end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Business Posting Group", 'OnAfterInsertEvent', '', true, true)]
+local procedure GBPGInserted(VAR Rec : Record "Gen. Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only create %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN 
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateBusinessPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Business Posting Group", 'OnAfterModifyEvent', '', true, true)]
+local procedure GBPGModified(VAR Rec : Record "Gen. Business Posting Group";VAR xRec : Record "Gen. Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only change %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN
+            ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateBusinessPostingGroup(Rec);   
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Business Posting Group", 'OnAfterRenameEvent', '', true, true)]
+local procedure GBPGRenamed(VAR Rec : Record "Gen. Business Posting Group";VAR xRec : Record "Gen. Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot rename an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Business Posting Group", 'OnAfterDeleteEvent', '', true, true)]
+local procedure GBPGDeleted(VAR Rec : Record "Gen. Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot delete an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"VAT Business Posting Group", 'OnAfterInsertEvent', '', true, true)]
+local procedure VBPGInserted(VAR Rec : Record "VAT Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only create %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN 
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateVATBusinessPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"VAT Business Posting Group", 'OnAfterModifyEvent', '', true, true)]
+local procedure VBPGModified(VAR Rec : Record "VAT Business Posting Group";VAR xRec : Record "VAT Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only change %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateVATBusinessPostingGroup(Rec);
+end;
+[EventSubscriber(ObjectType::Table, Database::"VAT Business Posting Group", 'OnAfterRenameEvent', '', true, true)]
+local procedure VBPGRenamed(VAR Rec : Record "VAT Business Posting Group";VAR xRec : Record "VAT Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot rename an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"VAT Business Posting Group", 'OnAfterDeleteEvent', '', true, true)]
+local procedure VBPGDeleted(VAR Rec : Record "VAT Business Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot delete an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Product Posting Group", 'OnAfterInsertEvent', '', true, true)]
+local procedure GPPGInserted(VAR Rec : Record "Gen. Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only create %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN 
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateProductPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Product Posting Group", 'OnAfterModifyEvent', '', true, true)]
+local procedure GPPGModified(VAR Rec : Record "Gen. Product Posting Group";VAR xRec : Record "Gen. Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only change %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateProductPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Product Posting Group", 'OnAfterRenameEvent', '', true, true)]
+local procedure GPPGRenamed(VAR Rec : Record "Gen. Product Posting Group";VAR xRec : Record "Gen. Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot rename an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Gen. Product Posting Group", 'OnAfterDeleteEvent', '', true, true)]
+local procedure GPPGDeleted(VAR Rec : Record "Gen. Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot delete an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"VAT Product Posting Group", 'OnAfterInsertEvent', '', true, true)]
+local procedure VPPGInserted(VAR Rec : Record "VAT Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only create %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN 
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateVATProductPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"VAT Product Posting Group", 'OnAfterModifyEvent', '', true, true)]
+local procedure VPPGModified(VAR Rec : Record "VAT Product Posting Group";VAR xRec : Record "VAT Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only change %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateVATProductPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"VAT Product Posting Group", 'OnAfterRenameEvent', '', true, true)]
+local procedure VPPGRenamed(VAR Rec : Record "VAT Product Posting Group";VAR xRec : Record "VAT Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot rename an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"VAT Product Posting Group", 'OnAfterDeleteEvent', '', true, true)]
+local procedure VPPGDeleted(VAR Rec : Record "VAT Product Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot delete an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Customer Posting Group", 'OnAfterInsertEvent', '', true, true)]
+local procedure CustPostGrpInserted(VAR Rec : Record "Customer Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only create %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN 
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateCustomerPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Customer Posting Group", 'OnAfterModifyEvent', '', true, true)]
+local procedure CustPostGrpModified(VAR Rec : Record "Customer Posting Group";VAR xRec : Record "Customer Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only change %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateCustomerPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Customer Posting Group", 'OnAfterRenameEvent', '', true, true)]
+local procedure CustPostGrpRenamed(VAR Rec : Record "Customer Posting Group";VAR xRec : Record "Customer Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot rename an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Customer Posting Group", 'OnAfterDeleteEvent', '', true, true)]
+local procedure CustPostGrpDeleted(VAR Rec : Record "Customer Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot delete an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Vendor Posting Group", 'OnAfterInsertEvent', '', true, true)]
+local procedure VendPostGrpInserted(VAR Rec : Record "Vendor Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only create %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN 
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateVendorPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Vendor Posting Group", 'OnAfterModifyEvent', '', true, true)]
+local procedure VendPostGrpModified(VAR Rec : Record "Vendor Posting Group";VAR xRec : Record "Vendor Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You can only change %1 in a master company.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT CompanyIsPublisher THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION)
+    ELSE
+        UpdateVendorPostingGroup(Rec);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Vendor Posting Group", 'OnAfterRenameEvent', '', true, true)]
+local procedure VendPostGrpRenamed(VAR Rec : Record "Vendor Posting Group";VAR xRec : Record "Vendor Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot rename an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+    IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
+[EventSubscriber(ObjectType::Table, Database::"Vendor Posting Group", 'OnAfterDeleteEvent', '', true, true)]
+local procedure VendPostGrpDeleted(VAR Rec : Record "Vendor Posting Group";RunTrigger : Boolean)
+var
+    ErrorMsg: Label 'You cannot delete an %1.', comment = '', Maxlength = 999, locked = true;
+begin
+        IF NOT RunTrigger THEN
+        EXIT;
+    IF NOT EditModeIsEnabled THEN
+        ERROR(ErrorMsg,Rec.TABLECAPTION);
+end;
+
 // </events>
 }
