@@ -16,6 +16,11 @@ table 50012 "Master GL Subscriber"
         {
             DataClassification = CustomerContent;
         }
+        field(3;"Is Limited Subscriber"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+
     }
     keys
     {

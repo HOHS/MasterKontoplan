@@ -13,8 +13,8 @@ table 50010 "Master General Ledger Setup"
         field(10;"Subscriber/Publisher";Option)
         {
             Caption = 'Subscriber/Publisher';
-            OptionCaption = ' ,Subscriber,Publisher';
-            OptionMembers = " ",Subscriber,Publisher;
+            OptionCaption = ' ,Subscriber,Limited Subscriber,Publisher';
+            OptionMembers = " ",Subscriber,"Limited Subscriber",Publisher;
             DataClassification = CustomerContent;
             trigger OnValidate() //NEWCODE
             var
@@ -82,8 +82,12 @@ table 50010 "Master General Ledger Setup"
 
         
         if Rec."Subscriber/Publisher" = Rec."Subscriber/Publisher"::Subscriber then begin
-            MasterGeneralLedgerMgt.AddSubscription("Subscribes to General Ledger",CompanyName());
-            MasterGeneralLedgerMgt.DoInitialCopy("Subscribes to General Ledger",CompanyName());
+            MasterGeneralLedgerMgt.AddSubscription("Subscribes to General Ledger",CompanyName(),false);
+            MasterGeneralLedgerMgt.DoInitialCopy("Subscribes to General Ledger",CompanyName(),true);
+        end;
+        if Rec."Subscriber/Publisher" = Rec."Subscriber/Publisher"::"Limited Subscriber" then begin
+            MasterGeneralLedgerMgt.AddSubscription("Subscribes to General Ledger",CompanyName(),true);
+            MasterGeneralLedgerMgt.DoInitialCopy("Subscribes to General Ledger",CompanyName(),false);
         end;
     end;
 }

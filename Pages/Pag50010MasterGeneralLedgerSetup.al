@@ -34,13 +34,33 @@ page 50010 "Master General Ledger Setup"
     {
         area(Navigation)
         {
-            action(MasterDataSetup)
+            action(CopyLimitedTables)
             {
-                image = MapAccounts;
-                Caption = 'Master Data Setup';
+                Caption = 'Copy Limited Tables';
+                image = Copy;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
                 trigger OnAction()
+                var
+                    MasterGeneralLedgerMgt: Codeunit "Master General Ledger Mgt.";
                 begin
-                    page.run(50012)
+                    MasterGeneralLedgerMgt.CopyLimitedTables("Subscribes to General Ledger",CompanyName());
+                end;
+            }
+            action(InitializeCompanies){
+                caption = 'Initialize Companies';
+                Image = Setup;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                trigger OnAction()
+                var 
+                    MasterGLAccountInitialize: Codeunit "Master GL Account Initialize";
+                begin
+                    MasterGLAccountInitialize.Run();
                 end;
             }
         }

@@ -163,6 +163,126 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure UpdateMasterGLCompanyAndMasterGLSubscriberOnAfterDelete - NamedType ErrorMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1628223024 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only create %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GBPGInserted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1476507717 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GBPGModified - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 2203274506 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GBPGRenamed - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1303665241 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GBPGDeleted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 221778575 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only create %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VBPGInserted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 4287283814 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VBPGModified - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3825205825 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VBPGRenamed - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3651244898 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VBPGDeleted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3537230642 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only create %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GPPGInserted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3761902883 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GPPGModified - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1806314136 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GPPGRenamed - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1593388839 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure GPPGDeleted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3830001265 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only create %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VPPGInserted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1658444452 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VPPGModified - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3854441647 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VPPGRenamed - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3312597968 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VPPGDeleted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3599755550 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only create %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure CustPostGrpInserted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1366254375 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure CustPostGrpModified - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1653841540 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure CustPostGrpRenamed - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 3773979171 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure CustPostGrpDeleted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 2485869222 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only create %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VendPostGrpInserted - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 2524028911 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You can only change %1 in a master company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VendPostGrpModified - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1583707756 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot rename an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VendPostGrpRenamed - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 275315937 - Method 1604067259 - NamedType 331638123" maxwidth="999" size-unit="char" translate="no" xml:space="preserve">
+          <source>You cannot delete an %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Master General Ledger Mgt. - Procedure VendPostGrpDeleted - NamedType ErrorMsg</note>
+        </trans-unit>
         <trans-unit id="Page 287311118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Master GL Companies</source>
           <note from="Developer" annotates="general" priority="2"></note>
